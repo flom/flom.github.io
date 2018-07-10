@@ -2,6 +2,7 @@
 layout: post
 title:  "Angular: Synchronize component properties with URL query parameters"
 date:   2018-07-09
+comments: true
 categories: angular typescript
 ---
 
@@ -192,3 +193,26 @@ It would be even possible to encode properties of type object into query paramet
 [1] <a href="https://stackoverflow.com/questions/48873883/angular-aot-custom-decorator-error-encountered-resolving-symbol-values-staticall/48875749#48875749" target="_blank">https://stackoverflow.com/questions/48873883/angular-aot-custom-decorator-error-encountered-resolving-symbol-values-staticall/48875749#48875749</a>
 
 <a href="https://toddmotto.com/angular-decorators#creating-a-decorator" target="_blank">https://toddmotto.com/angular-decorators#creating-a-decorator</a>
+
+{% if page.comments %}
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://flom-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+{% endif %}
