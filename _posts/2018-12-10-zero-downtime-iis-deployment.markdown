@@ -2,7 +2,6 @@
 layout: post
 title:  "Poor Man's Zero Downtime Deployment in IIS"
 date:   2018-12-10
-comments: true
 ---
 
 For my side project I'm deploying two projects (Angular Frontend and ASP.NET Core API) to a Windows Server with IIS installed.
@@ -111,21 +110,3 @@ python cleanup.py 10 # number of old versions to keep
 
 ---
 
-{% if page.comments %}
-<div id="disqus_thread"></div>
-<script>
-
-var disqus_config = function () {
-this.page.url = 'https://flom.github.io/2018/12/10/zero-downtime-iis-deployment.html';  
-this.page.identifier = '2018-12-10-zero-downtime-iis-deployment.markdown'; 
-};
-
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://flom-github-io.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-{% endif %}
