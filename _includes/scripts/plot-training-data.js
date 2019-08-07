@@ -8,6 +8,8 @@ class Plot {
         this.offset_x = offset_x * this.scale_x; // todo: multiply by scale
         this.offset_y = offset_y * this.scale_y; // todo: multiply by scale
 
+        this.fontSize = 10; // px
+        this.ctx.font = `${this.fontSize}px sans-serif`;
         this.drawGridLines();
     }
 
@@ -25,13 +27,25 @@ class Plot {
         this.ctx.stroke();
         this.ctx.closePath();
 
-        this.ctx.font = '10px sans-serif';
         for (let i = 0; i < this.max_x; i += 50) {
-            this.ctx.fillText(i.toString(10), this.translateX(i), this.translateY(0));
+            this.ctx.beginPath();
+            this.ctx.moveTo(this.translateX(i), this.translateY(0) - 5);
+            this.ctx.lineTo(this.translateX(i), this.translateY(0) + 5);
+            this.ctx.stroke();
+            this.ctx.closePath();
+
+            this.ctx.fillText(i.toString(10), this.translateX(i) + 1,
+                this.translateY(0) + this.fontSize);
         }
 
         for (let i = 0; i < this.max_y; i += 50000) {
             if (i > 0) {
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.translateX(0) - 5, this.translateY(i));
+                this.ctx.lineTo(this.translateX(0) + 5, this.translateY(i));
+                this.ctx.stroke();
+                this.ctx.closePath();
+
                 this.ctx.fillText(i.toString(10), this.translateX(0), this.translateY(i));
             }
         }
