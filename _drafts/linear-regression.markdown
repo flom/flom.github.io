@@ -3,7 +3,7 @@ layout: post
 title:  "Machine Learning - Linear Regression"
 date:   2019-07-31
 jsarr:
-  - scripts/test.js
+  - scripts/plot.js
   - scripts/plot-training-data.js
 math: true
 ---
