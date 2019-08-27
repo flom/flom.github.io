@@ -3,8 +3,10 @@ layout: post
 title:  "Machine Learning - Linear Regression"
 date:   2019-07-31
 jsarr:
+  - scripts/globals.js
   - scripts/plot.js
   - scripts/plot-training-data.js
+  - scripts/plot-example-cost-functions.js
 math: true
 ---
 
@@ -36,7 +38,7 @@ $$
 
 To start let's plot our data onto a graph:
 
-<div id="graphTrainingData"></div>
+<canvas id="graphTrainingData" width="800" height="300"></canvas>
 
 We are looking for a linear function which should be very close to the data points.
 The function looks like this:
@@ -167,9 +169,11 @@ $$
 $$
 
 As we can see the cost of our second hypothesis is lower than of our first hypothesis.
-Plotting both hypothesis function we can see this as well:
+Plotting both hypothesis function ($\color{red}{h_{1}}$, $\color{blue}{h_{2}}$) we can see this as well:
 
-- insert plot here
+<canvas id="exampleCostFunctions" width="800" height="300"></canvas>
+
+The second hypothesis $h_{2}$ is closer to our training data than $h_{1}$.
 
 ### Outline
 

@@ -1,10 +1,10 @@
 class Plot {
-    constructor(ctx, offset_x, offset_y, max_x, max_y, label_x = 'x', label_y = 'y') {
-        this.ctx = ctx;
+    constructor(canvas_id, offset_x, offset_y, max_x, max_y, label_x = 'x', label_y = 'y') {
+        this.ctx = document.getElementById(canvas_id).getContext('2d');
         this.max_x = max_x;
         this.max_y = max_y;
-        this.scale_x = ctx.canvas.width / max_x;
-        this.scale_y = ctx.canvas.height / max_y;
+        this.scale_x = this.ctx.canvas.width / max_x;
+        this.scale_y = this.ctx.canvas.height / max_y;
         this.offset_x = offset_x * this.scale_x;
         this.offset_y = offset_y * this.scale_y;
         this.label_x = label_x;
@@ -12,6 +12,9 @@ class Plot {
 
         this.fontSize = 10; // px
         this.ctx.font = `${this.fontSize}px sans-serif`;
+
+        this.defaultStrokeStyle = '#000000';
+
         this.drawGridLines();
     }
 
@@ -81,7 +84,16 @@ class Plot {
         }
     }
 
-    drawFunction(fn) {
+    /**
+     *
+     * @param fn function to plot
+     * @param options {{label: string, color: string}}
+     */
+    drawFunction(fn, options = { label: '', color: '' }) {
+        if (options.color) {
+            this.ctx.strokeStyle = options.color;
+            this.ctx.fillStyle = options.color;
+        }
         this.ctx.beginPath();
         this.ctx.moveTo(this.translateX(0), this.translateY(fn(0)));
         for (let i = 1; i < this.max_x; i++) {
@@ -89,5 +101,15 @@ class Plot {
         }
         this.ctx.stroke();
         this.ctx.closePath();
+
+        if (options.label) {
+            const position = (this.max_x * 3) / 4;
+            this.ctx.fillText(options.label,
+                this.translateX(position),
+                this.translateY(fn(position)));
+        }
+
+        this.ctx.strokeStyle = this.defaultStrokeStyle;
+        this.ctx.fillStyle = this.defaultStrokeStyle;
     }
 }
