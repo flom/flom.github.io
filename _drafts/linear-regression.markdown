@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Machine Learning - Linear Regression"
+title:  "Linear Regression with Gradient Descent"
 date:   2019-07-31
 jsarr:
   - scripts/globals.js
@@ -174,6 +174,46 @@ Plotting both hypothesis function ($\color{red}{h_{1}}$, $\color{blue}{h_{2}}$) 
 <canvas id="exampleCostFunctions" width="800" height="300"></canvas>
 
 The second hypothesis $h_{2}$ is closer to our training data than $h_{1}$.
+
+## Gradient Descent
+
+With the hypothesis and cost function it is now possible to calculate the parameters $\theta_{0}$ and $\theta_{1}$ algorithmically.
+One way to do it is via **Gradient Descent**. 
+
+Before we start with our example we extend our training set with a new feature $x_{0}=1$ for each training example:
+
+|#|$x_{0}$|$x_{1}$|$y$|
+|-|-|-|-|
+|1|1|100|100000|
+|2|1|100|80000|
+|3|1|150|150000|
+|4|1|200|250000|
+
+The new feature column $x_{0}$ we include in our hypothesis: $h(x) = \theta_{0} x_{0} + \theta_{1} x_{1}$.
+This hypothesis is the same as $h(x) = \theta_{0} + \theta_{1} x_{1}$ because $x_{0} = 1$ in all cases but we need this new column for the next step.
+
+Now we start of with a random $\theta_{0}$ and $\theta_{1}$ and update them in each iteration with following formula:
+
+$$
+\theta_{j} := \theta_{j} - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x_{j}^{(i)}
+\text{ for } j := 0..n
+$$
+
+In our example it looks like this:
+
+$$
+\begin{eqnarray*}
+&\theta_{0} := \theta_{0} - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x_{0}^{(i)}\\
+&\theta_{1} := \theta_{1} - \alpha \frac{1}{m} \sum_{i=1}^{m} (h_{\theta}(x^{(i)}) - y^{(i)})x_{1}^{(i)}
+\end{eqnarray*}
+$$
+
+The new variable $\alpha$ is called the **learning rate**.
+It determines the step size of the updates of $\theta$.
+We repeat the updates of $\theta$ until it doesn't change any more (or only changes very little).
+
+Choosing a very small learning rate $\alpha$ and Gradient Descent might take a very long time but choosing a large learning rate we are running the risk of never reaching a stable $\theta$.
+That's why it takes some experimenting on $\alpha$ but starting with around $\alpha = 0.1$ should give you a good starting point.
 
 ### Outline
 
