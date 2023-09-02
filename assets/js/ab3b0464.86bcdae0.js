@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflom_github_io=self.webpackChunkflom_github_io||[]).push([[83],{1614:a=>{a.exports=JSON.parse('{"label":"OpenAPI","permalink":"/blog/tags/open-api","allTagsPath":"/blog/tags","count":1}')}}]);

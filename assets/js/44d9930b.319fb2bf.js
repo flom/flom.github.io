@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflom_github_io=self.webpackChunkflom_github_io||[]).push([[191],{4963:o=>{o.exports=JSON.parse('{"permalink":"/blog/tags/dev-ops","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

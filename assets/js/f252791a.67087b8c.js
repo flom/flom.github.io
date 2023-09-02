@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkflom_github_io=self.webpackChunkflom_github_io||[]).push([[361],{579:a=>{a.exports=JSON.parse('{"label":"angular","permalink":"/blog/tags/angular","allTagsPath":"/blog/tags","count":1}')}}]);
