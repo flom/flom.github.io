@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Flom Blog",
   tagline: "Just random stuff",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.png",
 
   // Set the production url of your site here
   url: "https://flom.github.io",
@@ -60,8 +60,8 @@ const config = {
       navbar: {
         title: "Flom Blog",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "FlomBlog",
+          src: "img/logo.png",
         },
         items: [
           { to: "/blog", label: "Blog", position: "left" },
@@ -94,6 +94,10 @@ const config = {
               {
                 label: "Blog",
                 to: "/blog",
+              },
+              {
+                label: "RSS",
+                to: "/blog/rss.xml",
               },
             ],
           },
