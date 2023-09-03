@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://flom.github.io/blog"/>
     <subtitle>Flom Blog Blog</subtitle>
-    <icon>https://flom.github.io/img/favicon.ico</icon>
+    <icon>https://flom.github.io/img/favicon.png</icon>
     <entry>
         <title type="html"><![CDATA[Open API]]></title>
         <id>https://flom.github.io/blog/2019/07/30/open-api</id>
